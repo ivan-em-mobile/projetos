@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco_Vocacao</title>
+  <link rel="shortcut icon" href="./bancoVocacao/favicon.png" type="image/x-icon">
+
+  <!-- <link rel="stylesheet" href="style_banco.css"> -->
+</head>
+
+<style>
+  /* style_banco.css */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+  }
+
+  .container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .main-title {
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+
+  .balance-info {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+
+  .balance-value {
+    font-weight: bold;
+    color: #28a745;
+  }
+
+  .transaction-selection {
+    margin-bottom: 20px;
+  }
+
+  .service-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .transaction-type-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    margin-bottom: 10px;
+  }
+
+  .process-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+
+  .process-button:hover {
+    background-color: #0056b3;
+  }
+
+  .footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+  }
+
+  .copyright {
+    margin: 0;
+  }
+</style>
+</head>
+
+<!-- Qual a conclusão que você entende sobre o código
+ quais os ID e ou CLASS usado nesse código: Existe 
+ neste código o uso dos callbacks e promise ?
+-->
+
+<body>
+  <div class="container">
+    <h1 class="main-title">Banking Vocacao System</h1>
+    <p class="balance-info">Saldo Atual: <span id="balance" class="balance-value">R$0.00</span></p>
+
+    <div class="transaction-selection">
+      <label for="transactionType" class="service-label">Selecione o tipo de Serviço:</label>
+      <select id="transactionType" class="transaction-type-select">
+        <option value="deposit">Depósito</option>
+        <option value="withdraw">Saque de Conta</option>
+        <option value="checkBalance">Saldo em Conta</option>
+      </select>
+      <button class="process-button" onclick="processTransaction()">Escolhido</button>
+    </div>
+
+    <div class="footer">
+      <p class="copyright">@_ivanpaulino Vocacao 2025 &copy;</p>
+    </div>
+  </div>
+
+</body>
+<!-- <script src="script_banco.js"></script> -->
+
+  <script>
+    var balance = 0;
+    var balanceDisplay = document.getElementById("balance");
+
+    function updateBalanceDisplay() {
+      balanceDisplay.textContent = "R$" + balance.toFixed(2);
+    }
+
+    function deposit() {
+      var amountStr = prompt("Faça um Depósito na sua Conta:");
+      if (amountStr === null) return; // Usuário cancelou
+      var amount = parseFloat(amountStr);
+      if (isNaN(amount) || amount <= 0) {
+        alert("Por favor, insira um valor numérico válido e positivo.");
+        return;
+      }
+      balance += amount;
+      updateBalanceDisplay();
+    }
+
+    function withdraw() {
+      var amountStr = prompt("Quanto quer retirar da sua Conta:");
+      if (amountStr === null) return; // Usuário cancelou
+      var amount = parseFloat(amountStr);
+      if (isNaN(amount) || amount <= 0) {
+        alert("Por favor, insira um valor numérico válido e positivo.");
+        return;
+      }
+      if (amount > balance) {
+        alert("Saldo insuficiente.");
+        return;
+      }
+      balance -= amount;
+      updateBalanceDisplay();
+    }
+
+    function checkBalance() {
+      alert("Seu saldo atual é: R$" + balance.toFixed(2));
+    }
+
+    function processTransaction() {
+      var type = document.getElementById("transactionType").value;
+
+      switch (type) {
+        case "deposit":
+          deposit();
+          break;
+        case "withdraw":
+          withdraw();
+          break;
+        case "checkBalance":
+          checkBalance();
+          break;
+        default:
+          alert("Serviço não reconhecido.");
+      }
+    }
+
+    // Inicializa a exibição do saldo
+    updateBalanceDisplay();
+  </script>
+
+</html>

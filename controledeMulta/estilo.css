@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+/*configuração básicas, fazendo o reset da pagina
+sendo que a borda faça parte da pagina*/
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/*configuração básicas, fazendo o reset da pagina
+sendo que a borda faça parte da pagina*/
+body,
+html {
+    background-color: #5f2c82;
+    height: 100vh;
+    width: 100vw;
+}
+
+/*posicionar o main em relação a tela*/
+main {
+    height: 100vh;
+    width: 100vw;
+}
+
+/*definir a possição da tela em relação a div de login*/
+section#login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background-color: aliceblue;
+    width: 250px;
+    height: 515px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px grey;
+    
+    transform: translate(-50%, -50%);
+    transition: width .3s, height .3s;
+    transition-timing-function: ease;
+}
+
+/*carregar uma imagem em firt mobile para ter tanto o fundo como a posição da imagem*/
+section#login>div#imagem {
+    display: block;
+    background: #5f2c82 url(patternsbg.jpg) no-repeat;
+    background-size: cover;
+    background-position: left top;
+    height: 200px;
+}
+
+/*seção de login terá um formulario onde sera possionado*/
+section#login>div#formulario {
+    display: block;
+    padding: 5px;
+}
+
+/*configuração básicas, fazendo o reset da pagina
+sendo que a borda faça parte da pagina*/
+div#formulario>h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+div#formulario>p {
+    font-size: 0.8em;
+}
+
+/*configuração básicas, fazendo o reset da pagina
+sendo que a borda faça parte da pagina*/
+
+form>input {
+    display: block;
+    font-size: 1em;
+    width: 100%;
+    height: 40px;
+    background-color: #49a09d;
+    color: aliceblue;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+form>div.campo {
+    background-color: #5f2c82;
+    display: block;
+    width: 99%;
+    height: 40px;
+    border-radius: 7px;
+    margin: 5px 0px;
+}
+
+div.campo>label {
+    display: none;
+}
+
+div.campo>span {
+    color: aliceblue;
+    font-size: 2em;
+    width: 40px;
+    padding: 5px;
+}
+
+div.campo>input {
+    background-color: #49a09d;
+    font-size: 1em;
+    width: calc(99% - 43px);
+    height: 90%;
+    border: 0px;
+    border-radius: 8px;
+    padding: 4px;
+    transform: translateY(-12px);
+}
+
+div.campo>input:focus-within {
+    background-color: aliceblue;
+}
+
+form>input[input=submit]:hover {
+
+    background-color: #25504f;
+
+}
+
+form>a.botao {
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    width: 100%;
+    height: 40px;
+    padding-top: 5px;
+    margin-top: 5px;
+    background-color: white;
+    color: #25504f;
+    border: 1px solid #49a09d;
+    border-radius: 7px;
+    text-decoration: none;
+}
+
+form>a.botao:hover {
+    background-color: #49a09d;
+}
+
+form>a.botao>span {
+    font-size: 0.8em;
+}

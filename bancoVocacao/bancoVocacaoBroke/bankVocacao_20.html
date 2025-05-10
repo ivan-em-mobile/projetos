@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/bancoVocacaoBroke/assets/bank.png" type="image/x-icon">
+  <link rel="stylesheet" href="/bancoVocacaoBroke/assets/camelCasestilo.css">
+  <title>Banco da Proz Bank</title>
+</head>
+
+<body>
+
+
+  <main>
+    <section>
+      <!--<section id="login">-->
+      <div id="imagem"></div>
+    <h1>Banking Vocacao System 2.0</h1>
+    <p>Saldo Atual: <span id="balance">R$0.00</span></p>
+
+    <label>Selecione o tipo de Serviço:</label>
+
+<!--     
+  value="checkBalance">Saldo em Cont verSaldo;
+  value="withdraw">Saque de Conta saqueConta; 
+  value="deposit">Depósito depositConta
+ -->
+
+    <select id="transactionType">
+      <option value="depositConta">Depósito</option>
+      <option value="saqueConta">Saque de Conta</option>
+      <option value="verSaldo">Saldo em Conta</option>
+    </select>
+
+    <!--
+      Ao selecionar o tipo de operação deve ser retornado em
+       transactionType e verificado em uma function chamada processTransaction
+-->
+    <button onclick="processTransaction()">Escolhido</button>
+    </section>
+  </main>
+
+
+  <script>
+
+/*
+  value="checkBalance">Saldo em Cont verSaldo;
+  value="withdraw">Saque de Conta saqueConta; 
+  value="deposit">Depósito depositConta
+*/
+    var balance = 0;
+
+    function processTransaction() {
+      var type = document.getElementById("transactionType").value;
+      var amount = 0;
+
+      if (type === "depositConta" || type === "saqueConta") {
+        amount = parseFloat(prompt("Insira o valor da transação:"));
+        if (isNaN(amount)) {
+          alert("Por favor, insira um valor numérico válido.");
+          return;
+        }
+
+        //function deposit() {
+        function depositConta() {
+
+          var amount = prompt("Faça um Depósito na sua Conta:");
+          balance += parseFloat(amount);
+          updateBalance();
+        }
+
+        function saqueConta() {
+          var amount = prompt("Quanto quer retirar da sua Conta:");
+          balance -= parseFloat(amount);
+          updateBalance();
+        }
+
+        function verSaldo() {
+          alert("Your current balance is: $" + balance.toFixed(2));
+        }
+
+        function updateBalance() {
+          document.getElementById("balance").innerHTML = "$" + balance.toFixed(2);
+        }
+
+
+      }
+      switch (type) {
+        case "deposit":
+        depositConta(amount);
+          break;
+        case "withdraw":
+        saqueConta(amount);
+          break;
+        case "checkBalance":
+        verSaldo();
+          break;
+        default:
+          alert("Sistema não realiza esse serviço 💥");
+      }
+    }
+  </script>
+</body>
+
+</html>
