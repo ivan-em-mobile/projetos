@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+/* Cores da Vocacao
+#004D6E ok azul escuro
+#0081AB ok azul escuro2
+#004A6D ok azul escuro3
+#038BAE ok azul escuro4
+
+#2EAACC ok azul claro
+#00B3DB ok azul claro2
+#39A7CA ok azul claro3
+#4CC6F4 ok azul claro4
+
+#36A391 ok verde azul
+#12B1CE ok verde azul2
+
+#E22D62 ok vermelho
+#9D3452 ok vermelho2
+#DA3466 ok vermelho3
+#FBED00 ok amarelo
+
+#4A4145 ok marrom
+#DCDDD8 ok cinza
+#E5E1E2 ok cinza2*/
+
+/*
+#844CA3 -- violeta
+#593493 -- roxo
+#FF7F00 -- laranja
+*/
+
+:root {
+  --bk-color: #004D6E;
+  --bk-login: #fff0f5;
+  --bk-img-login: #038BAE;
+  --bk-main: #2EAACC;
+  --txt-color: #f5f5f5;
+  --bnt-color-br: #E5E1E2;
+  --bnt-color-bk: #FBED00;
+  --bnt-color-hr: #4A4145;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bk-color);
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  border-radius: 7px;
+  color: var(--txt-color);
+  background-color: var(--bk-main);
+  margin-bottom: 3px;
+  width: 250px;
+  height: auto; /* Ajusta a altura automaticamente */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px #808080;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7px;
+}
+
+#imagem {
+  display: block;
+  background: var(--bk-img-login) url('../bankwp.jpg') no-repeat;
+  background-size: cover;
+  background-position: center top; /* Centralizei a imagem */
+  height: 150px; /* Reduzi a altura da imagem */
+  width: 100%; /* A imagem ocupa toda a largura da seção */
+  border-radius: 20px 20px 0 0; /* Arredonda apenas as bordas superiores */
+  margin-bottom: 15px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 1.5em; /* Reduzi o tamanho da fonte do título */
+}
+
+p {
+  text-align: center;
+  padding: 7px;
+  margin: 5px 0;
+}
+
+label {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+
+select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--bnt-color-br);
+  margin-bottom: 15px;
+  width: 100%; /* O select ocupa toda a largura da seção */
+}
+
+button {
+  border-radius: 4px;
+  border: 1px solid var(--bnt-color-br);
+  background-color: var(--bnt-color-bk);
+  color: #333; /* Adicionei uma cor de texto para melhor contraste */
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--bnt-color-hr);
+  color: var(--txt-color);
+}

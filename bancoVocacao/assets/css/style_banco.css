@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+:root {
+
+    --fundo-claro: #DCDDD8;
+    --fundo-cr: #fff;
+    --txt-color: #000;
+    --txt-color-wh: #fff;
+    --txt-color-te: #4CC6F4;
+    --txt-color-t: #038BAE;
+    --txt-color-bv: #004A6D;
+    --txt-color-fr: #36A391;
+    --bnt-color: #E22D62;
+    --bnt-color-hr: #9D3452;
+
+
+    /* Cores da Vocacao 
+#004D6E ok azul escuro
+#0081AB ok azul escuro2
+#004A6D ok azul escuro3
+#038BAE ok azul escuro4
+#2EAACC ok azul claro
+#00B3DB ok azul claro2
+#39A7CA ok azul claro3
+#4CC6F4 ok azul claro4
+#12B1CE ok verde azul2
+#36A391 ok verde azul
+#E22D62 ok vermelho
+#9D3452 ok vermelho2
+#DA3466 ok vermelho3
+#FBED00 ok amarelo
+#4A4145 ok marrom
+#DCDDD8 ok cinza
+#E5E1E2 ok cinza2*/
+
+    /* --fundo-claro: #f4f4f4;
+    --fundo-cr: #fff;
+    --txt-color: #000;
+    --txt-color-wh: #fff;
+    --txt-color-te: #007bff;
+    --txt-color-t: #333;
+    --txt-color-bv: #28a745;
+    --txt-color-fr: #777;
+    --bnt-color: #007bff;
+    --bnt-color-hr: #0056b3; */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--fundo-claro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--txt-color-t);
+}
+
+.container {
+    background-color: var(--fundo-cr);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(176, 103, 103, 0.1);
+    text-align: center;
+}
+
+.main-title {
+    color: var(--txt-color-te);
+    margin-bottom: 20px;
+}
+
+.balance-info {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.balance-value {
+    font-weight: bold;
+    color: var(--txt-color-bv)
+}
+
+.transaction-selection {
+    margin-bottom: 20px;
+}
+
+.service-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.transaction-type-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.process-button {
+    background-color: var(--bnt-color);
+    color: var(--txt-color-wh);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.process-button:hover {
+    background-color: var(--bnt-color-hr)
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: var(--txt-color-fr);
+}
+
+.copyright {
+    margin: 0;
+}

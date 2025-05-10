@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco da Vocacao Bank</title>
+    <link rel="shortcut icon" href="./assets/bank.png" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="style_banco_tipos.css"> -->
+    <style>
+        /* style_banco_tipos.css */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .main-title {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .account-form {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .service-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .account-type-select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        .process-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .process-button:hover {
+            background-color: #1e7e34;
+        }
+
+        .result-message {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .copyright {
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="main-title">Banking Vocacao System</h1>
+        <p>Saldo Atual: <span id="balance">R$0.00</span></p>
+
+        <form class="account-form">
+
+            <label for="accountType" class="service-label">Selecione o tipo de Serviço:</label>
+
+            <select id="accountType" class="account-type-select">
+
+                <option value="deposit">Checking</option>
+
+                <option value="withdraw">Sacking</option>
+
+                <option value="creditBalance">Balance</option>
+            </select>
+
+            <button type="button" class="process-button" onclick="processAccountType()">Escolhido</button>
+        </form>
+
+        <div id="result" class="result-message"></div>
+
+        <div class="footer">
+            <p class="copyright">@_ivanpaulino Vocacao 2025 &copy;</p>
+        </div>
+    </div>
+
+    <script>
+
+        var balance = 0;
+
+        function updateBalance() {
+            document.getElementById("balance").textContent = "R$" + balance.toFixed(2);
+        }
+
+        function deposit(amount) {
+            balance += amount;
+            updateBalance();
+            alert(`Depósito de R$${amount.toFixed(2)} realizado com sucesso.`);
+        }
+
+        function withdraw(amount) {
+            if (amount > balance) {
+                alert("Saldo insuficiente para realizar o saque.");
+                return;
+            }
+            balance -= amount;
+            updateBalance();
+            alert(`Saque de R$${amount.toFixed(2)} realizado com sucesso.`);
+        }
+
+        function checkBalance() {
+            alert("Seu saldo atual é: R$" + balance.toFixed(2));
+        }
+
+        function processAccountType() {
+            var accountType = document.getElementById("accountType").value;
+            var resultDiv = document.getElementById("result");
+
+            switch (accountType) {
+                case "deposit":
+                    amount = parseFloat(prompt("Insira o valor do depósito:"));
+                    if (!isNaN(amount)) {
+                        deposit(amount);
+                    } else {
+                        alert("Por favor, insira um valor numérico válido para o depósito.");
+                    }
+
+                    resultDiv.textContent = "Você selecionou um Depósito em conta corrente.";
+                    break;
+
+                case "withdraw":
+                    amount = parseFloat(prompt("Insira o valor do saque:"));
+                    if (!isNaN(amount)) {
+                        withdraw(amount);
+                    } else {
+                        alert("Por favor, insira um valor numérico válido para o saque.");
+                    }
+
+                    resultDiv.textContent = "Você selecionou uma Extrato da conta.";
+                    break;
+                case "creditBalance":
+                    resultDiv.textContent = "Você selecionou o Saldo da conta.";
+                    checkBalance();
+                    break;
+                default:
+                    resultDiv.textContent = "Por favor, escolha uma das opções.";
+            }
+        }
+
+
+        // Inicializa o saldo na tela
+        updateBalance();
+    </script>
+</body>
+
+</html>
