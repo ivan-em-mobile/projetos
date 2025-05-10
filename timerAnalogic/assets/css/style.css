@@ -1,5 +1,15 @@
 @charset "utf-8";
 
+:root {
+  /* --bk-color:#e5e5e5;
+  #08090e; */
+  --bk-color-img: #61616191;
+  --bk-color-img2: #000000e7;
+  --color-txt: #fff;
+  --bk-color-pont: #d5b617;
+
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,18 +19,26 @@
 
 body {
   display: flex;
+  overflow-y: hidden;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #e5e5e5;
+
+  background-image: linear-gradient(150deg, var(--bk-color-img),
+      var(--bk-color-img2)),
+    url('../gundan-icone.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
 }
 
 .container {
   width: 510px;
   height: 510px;
-  background: #08090e;
+  background: var(--bk-color-img2);
   border-radius: 50%;
-  border: 5px solid #313236;
+  border: 5px solid var(--bk-color-img);
   display: flex;
   justify-self: center;
   align-items: center;
@@ -54,7 +72,7 @@ body {
 
 .number_hours span p {
   font-size: 52px;
-  color: #fff;
+  color: var(--color-txt);
   transform: rotate(calc(var(--index) * -30deg));
 }
 
@@ -72,13 +90,13 @@ body {
 .clock .seconds_bar span p {
   width: 3px;
   height: 12px;
-  background: #4a4d53;
+  background: var(--bk-color-img);
   display: inline-block;
   border-radius: 2px;
 }
 
 .clock .seconds_bar span:nth-child(5n) p {
-  background: #fff;
+  background: var(--color-txt);
   width: 5px;
   height: 18px;
   transform: translateY(1px);
@@ -108,7 +126,7 @@ body {
   width: 7px;
   /* half of the parent height */
   height: 138px;
-  background: #fff;
+  background: var(--color-txt);
   position: absolute;
 }
 
@@ -121,7 +139,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   border-radius: 25px;
-  background: #fff;
+  background: var(--color-txt);
 }
 
 .hands_box .minute {
@@ -136,7 +154,7 @@ body {
   transform: translateY(-50%);
   width: 25px;
   height: 25px;
-  background: #fff;
+  background: var(--color-txt);
   border-radius: 25px;
 }
 
@@ -144,7 +162,7 @@ body {
   width: 7px;
   /* half of the parent height */
   height: 190px;
-  background: #fff;
+  background: var(--color-txt);
   position: absolute;
 }
 
@@ -152,7 +170,7 @@ body {
   content: "";
   width: 13px;
   height: 170px;
-  background: #fff;
+  background: var(--color-txt);
   position: absolute;
   bottom: 25px;
   left: 50%;
@@ -172,7 +190,7 @@ body {
   transform: translateY(-50%);
   width: 16px;
   height: 16px;
-  background: #d5b617;
+  background: var(--bk-color-pont);
   border-radius: 25px;
 }
 
@@ -183,7 +201,7 @@ body {
   transform: translateY(-50%);
   width: 8px;
   height: 8px;
-  background: #08090e;
+  background: var(--bk-color-img2);
   border-radius: 25px;
 }
 
@@ -192,7 +210,7 @@ body {
   width: 4px;
   /* half of parent height*/
   height: calc(210px + 50px);
-  background: #d5b617;
+  background: var(--bk-color-pont);
   position: relative;
   border-radius: 2px;
 }
@@ -201,7 +219,7 @@ body {
   content: '';
   width: 10px;
   height: 35px;
-  background: #d5b617;
+  background: var(--bk-color-pont);
   position: absolute;
   bottom: -4px;
   left: 50%;
