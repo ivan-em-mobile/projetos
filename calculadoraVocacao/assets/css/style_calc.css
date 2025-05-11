@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+:root {
+    --tex-color:#ffffff;
+    --text-color1:#000;
+    --fun-color1:#61616191;
+    --fun-color2:#000000e7;
+    --fun-bnt-color:#38383861;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background-image: linear-gradient(150deg, var(--fun-color1), var(--fun-color2)),
+    url('../gundan-icone.png');
+
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    height: 100vh;
+    color: var(--tex-color);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box {
+    background-color: var(--fun-color2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+
+.tela {
+    background-color: var(--tex-color);
+    height: 30px;
+    color:var(--text-color1);
+    font-size: 25px;
+    text-align: end;
+    margin: 3px;
+
+}
+
+button {
+    width: 80px;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--fun-color1);
+    color: var(--tex-color);
+}
+
+button:hover {
+    background-color: var(--fun-bnt-color);
+}
