@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula04-light_bulb</title>
+
+    <style>
+        :root {
+            --gabriel: blue;
+            --ster: purple;
+            --nicolas: green;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--ster);
+            background-image: linear-gradient(to top,
+                    var(--gabriel), var(--nicolas));
+            background-attachment: fixed;
+        }
+
+        header,
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Lâmpada</h1>
+    </header>
+    <section>
+        <div>
+            <img src="./assets/lamp_off.jpeg" 
+            alt="Lâmpada Off" id='lamp'>
+        </div>
+
+        <div>
+            <button id='turnOn'>Ligar</button>
+            <button id='turnOff'>DesLigar</button>
+        </div>
+    </section>
+</body>
+
+<script>
+
+    const turnOn = document.getElementById('turnOn');
+    const turnOff = document.getElementById('turnOff');
+    const lamp = document.getElementById('lamp');
+
+    function isLampBroken() {
+        return lamp.src.indexOf('quebrada') > -1
+    }
+
+    // erro de digitação
+    function lampOn() {
+        if (!isLampBroken()) {
+            lamp.src = './assets/lamp_on.jpeg';
+        }
+    }
+
+    function lampOff() {
+        if (!isLampBroken()) {
+            lamp.src = './assets/lamp_off.jpeg';
+        }
+    }
+
+    function lampBroken() {
+        lamp.src = './assets/lamp_broke.jpeg';
+    }
+
+    turnOn.addEventListener('click', lampOn);
+    turnOff.addEventListener('click', lampOff);
+    lamp.addEventListener('mouseover', lampOn);
+    lamp.addEventListener('mouseleave', lampOff);
+    lamp.addEventListener('dblclick', lampBroken);
+
+
+</script>
+
+</html>

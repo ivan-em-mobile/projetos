@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+:root {}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.169), rgba(0, 0, 0, 0.098)),
+    url('/assets/gundan-icone.png'); Define a imagem como outra imagem de fundo */
+
+    background-image: linear-gradient(150deg, #61616191, #000000e7),
+        url('/assets/gundan-icone.png');
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    height: 100vh;
+    color: #ffffff;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box {
+    background-color: #1d1d1de0;
+    /* width: 55%; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.tela {
+    background-color: #ffffff;
+    height: 30px;
+    color: #000;
+    font-size: 25px;
+    text-align: end;
+    margin: 3px;
+
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    cursor: pointer;
+    border: none;
+    background-color: #474747;
+    color: #ffffff;
+}
+
+button:hover {
+    background-color: #383838;
+}
