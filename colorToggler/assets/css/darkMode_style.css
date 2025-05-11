@@ -1,0 +1,82 @@
+        :root {
+            --fundo-claro: #fff;
+            --fundo-escuro: #000;
+            --botao-primario: #7d1ad4;
+            --botao-primario-hover: #6e17b9;
+            --texto-claro: #000;
+            /* Adicionar esta variável para o texto no tema claro */
+            --texto-escuro: #fff;
+            /* Adicionar esta variável para o texto no tema escuro */
+        }
+
+        [data-theme="dark"] {
+            --fundo-claro: #000;
+            --fundo-escuro: #fff;
+            --texto-claro: #fff;
+            --texto-escuro: #000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--fundo-claro);
+            color: var(--texto-claro);
+            /* Adicionar esta linha */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            background-color: var(--fundo-escuro);
+            color: var(--texto-escuro);
+            /* Adicionar esta linha */
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 0.9rem;
+        }
+
+        button {
+            background-color: var(--botao-primario);
+            color: var(--texto-escuro);
+            /* Adicionar texto do botão mude */
+            padding: 0.4rem;
+            border: none;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            display: flex;
+            /* Para centralizar o ícone */
+            align-items: center;
+            justify-content: center;
+        }
+
+        button:hover {
+            background-color: var(--botao-primario-hover);
+            transition: 0.8s;
+        }
+
+        .material-symbols-rounded {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48;
+            font-size: 34px;
+            /* Ajuste o tamanho do ícone */
+            color: var(--texto-claro);
+            /* Cor inicial do ícone */
+        }
+
+        [data-theme="dark"] .material-symbols-rounded {
+            color: var(--texto-escuro);
+            /* Cor do ícone no tema escuro */
+        }
