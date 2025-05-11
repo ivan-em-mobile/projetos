@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+/*
+*
+*/
+:root {
+    --maincentral: #696969a1;
+    --jujuajusta: #f5efea;
+    --fillgame: #000000e6;
+    --victoriathesnek: #8B0000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: var(--maincentral);
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--maincentral);
+    padding: 15px; /* Reduzi o padding */
+    border-radius: 8px; /* Reduzi o raio da borda */
+    margin: 7px; /* Reduzi a margem */
+    max-width: 400px; /* Reduzi a largura máxima */
+    width: 90%;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2em; /* Reduzi a fonte do título */
+    color: #f5efea;
+    margin-bottom: 15px; /* Reduzi a margem inferior */
+}
+
+canvas {
+    background-color: var(--fillgame);
+    border: 3px solid #8B0000; /* Reduzi a largura da borda */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem; /* Reduzi a fonte da pontuação */
+    color: #f5efea;
+    margin-bottom: 15px; /* Reduzi a margem inferior */
+}
+
+.score--value {
+    font-weight: 700;
+    font-size: 3.5rem; /* Reduzi a fonte do valor da pontuação */
+    display: block;
+    margin-top: -8px; /* Ajustei a margem superior */
+}
+
+.menu-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.7); /* Ligeiramente mais transparente */
+    padding: 20px; /* Reduzi o padding */
+    border-radius: 8px; /* Reduzi o raio da borda */
+}
+
+.game-over {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2.5rem; /* Reduzi a fonte do "Game Over" */
+    color: #f5efea;
+    margin-bottom: 15px; /* Reduzi a margem inferior */
+}
+
+.final-score {
+    font-size: 1.2rem; /* Reduzi a fonte da pontuação final */
+    font-weight: 500;
+    color: #f5efea;
+    margin-bottom: 20px; /* Reduzi a margem inferior */
+}
+
+.btn-play {
+    border: none;
+    border-radius: 80px; /* Reduzi o raio da borda */
+    padding: 12px 25px; /* Reduzi o padding do botão */
+    font-size: 1rem; /* Reduzi a fonte do botão */
+    font-weight: 600;
+    color: #333;
+    margin-top: 30px; /* Reduzi a margem superior */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Reduzi o espaçamento entre ícone e texto */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-play:hover {
+    background-color: #555;
+    color: #f5efea;
+}
+
+footer {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #696969a1;
+    color: #f5efea;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0; /* Reduzi o padding do footer */
+    position: fixed;
+    bottom: 0;
+    font-size: 0.9rem; /* Reduzi a fonte do footer */
+}
+
+.timer {
+    color: var(--jujuajusta);
+    font-size: 1.2rem; /* Reduzi a fonte do timer */
+    font-weight: bold;
+    margin-top: 15px; /* Reduzi a margem superior do timer */
+}
+
+.timer--title {
+    margin-right: 3px; /* Reduzi a margem direita */
+}
+
+.timer--value {
+    font-weight: normal;
+}

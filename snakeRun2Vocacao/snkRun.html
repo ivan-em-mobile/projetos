@@ -5,41 +5,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snake Game</title>
-  <link rel="shortcut icon" href="./assents/gamepad.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/gamepad.svg" type="image/x-icon">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <link rel="stylesheet" href="./assents/style.css">
+  <link rel="stylesheet" href="./assets/css/style_game.css">
 </head>
 
 <body>
-
   <main>
-    <h1>Snake Run</h1>
+    <h1>Snake Run 2</h1>
 
-    <div class="score">Score: <span class="score--value">00</span></div>
+    <div class="score">Pontos:
+      <span class="score--value">00</span>
+    </div>
+
+    <!-- <div class="timer">
+      <span class="timer--title">TEMPO:</span><span class="timer--value">0</span> -->
+      
+    </div>
 
     <div class="menu-screen">
-      <span class="game-over">Game Over</span>
-      <span class="final-score">score <span>00</span></span>
+      <span class="game-over">Fim de Jogo</span>
+      <span class="final-score">Seus Pontos: <span>00</span></span>
+
+    <div class="timer">
+      <span class="timer--title">TEMPO:</span>
+      <span class="timer--value">0</span>
+    </div>
 
       <button class="btn-play">
-
         <span class="material-symbols-outlined">
           play_circle
         </span>
-        Jogar de Novo !?
+        Jogar Novamente !?
       </button>
-      </span>
-
     </div>
-    <canvas width="600" height="600"></canvas>
+    <canvas id="stage" width="600" height="600"></canvas>
   </main>
+  <audio id="eatSound" src="./assets/audio.mp3"></audio>
 
-    <footer>Desenvolvido por @_ivanpaulino 2024</footer>
-  <!--<canvas width="600" height="400"></canvas>-->
-  <!--<canvas id="stage" width="600" height="600"></canvas>-->
-  <script src="./assents/script.js"></script>
-
+  <footer>Desenvolvido por @_ivanpaulino 2025</footer>
+  <script src="./assets/js/script_game.js"></script>
 </body>
 
 </html>
