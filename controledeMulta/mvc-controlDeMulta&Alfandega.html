@@ -1,4 +1,3 @@
-<!--Aqui vai ter uma imagem pelo CSS-->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,46 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/estilo.css">
     <link rel="stylesheet" href="./assets/mq-estilo.css">
-    <link rel="shortcut icon" href="./assets/opsz24.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <title>MVC-Controle de Multa</title>
-
+    <title>MVC-Controle de Velocidade</title>
 </head>
 
 <body>
     <main>
         <section id="login">
             <div id="imagem">
-                <!-- Aqui vai ter uma imagem pelo CSS // 
-                Criar uma pagina com sistema ou controle de Multa//
-                Controle de Alfandega = BRASIL não é Estrangeiro// -->
-            </div>
+                </div>
             <div id="formulario">
-                <h1>VOCACAO - Controle de Multa</h1>
-                <p>Bem-vindo novamente, Digite a velocidade do veiculo e sua PLACA.
-                </p>
-                <p>velocidade do Veiculo:<input type="number" name="txtvel" id="txtvel"> Km/h</p>
-                <input type="button" value="Verificar" onclick="calcular()">
-                <div id="resp"> </div>
-
-                <script>
-                    function calcular() {
-                        var txtvel = window.document.querySelector('input#txtvel')
-                        var vel = Number(txtvel.value)
-                        var resp = window.document.querySelector('div#resp')
-                        //resp.innerHTML = `<p>A velocidade do veiculo é de ${vel} Km/h</p>`
-                        if (vel > 60) {
-                            resp.innerHTML += `<p>Você foi multado por excesso de velocidade ${vel} Km/h</p>`
-                        } else {
-                            resp.innerHTML += `<p>Você está dentro do limite de velocidade ${vel} Km/h</p>`
-                        }
-                    }
-                </script>
-
+                <h1>VOCACAO - Controle de Velocidade</h1>
+                <p>Bem-vindo novamente, Digite a Velocidade do veiculo e sua PLACA.</p>
+                <p>Placa do Veiculo:<input type="text" name="txtvei" id="txtvei"></p>
+                <p>Velocidade do Veiculo:<input type="number" name="txtvel" id="txtvel"> Km/h</p>
+                <input type="button" value="Processar" onclick="calcular()">
+                <div id="resp"></div>
+            </div>
         </section>
     </main>
 
+    <script>
+        function calcular() {
+            var txtvei = window.document.getElementById('txtvei');
+            var txtvel = window.document.querySelector('input#txtvel');
+            var vei = String(txtvei.value);
+            var vel = Number(txtvel.value);
+            var resp = window.document.querySelector('div#resp');
 
+            resp.innerHTML = ''; // Limpa a div de resposta
+
+            if (vel > 60) {
+                resp.innerHTML += `<p>Placa do infrator: ${vei}.</p>`;
+                resp.innerHTML += `<p>Você foi multado por excesso de velocidade ${vel} Km/h</p>`;
+            } else {
+                resp.innerHTML += `<p>Você está dentro do limite de velocidade ${vel} Km/h</p>`;
+            }
+        }
+    </script>
 </body>
 
 </html>
