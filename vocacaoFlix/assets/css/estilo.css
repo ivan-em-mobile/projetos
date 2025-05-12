@@ -60,7 +60,7 @@ body {
 .banner__title {
     font-size: 3rem;
     font-weight: 800;
-    padding-bottom: 0.3rem;
+    padding-bottom: 2.9rem;
 }
 
 .banner__description {
@@ -141,19 +141,6 @@ display: none;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 header {
     padding: 5px;
 
@@ -179,4 +166,123 @@ img {
     width: 100px;
     height: auto;
 
+}
+
+footer {
+    background-color: #000; /* Cor de fundo preta */
+    color: #757575; /* Cor do texto cinza */
+    padding: 30px 0;
+    font-size: 13px;
+}
+
+.footer-container {
+    max-width: 1000px; /* Largura máxima do conteúdo */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.top-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.get-started {
+    background-color: #e50914; /* Cor vermelha do botão */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.membership-text {
+    margin-top: 10px;
+}
+
+.links-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.column ul li {
+    margin-bottom: 10px;
+}
+
+.column ul li a {
+    color: #757575;
+    text-decoration: none;
+}
+
+.language-section {
+    margin-bottom: 20px;
+}
+
+.language-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.language-dropdown button {
+    background-color: transparent;
+    color: #757575;
+    border: 1px solid #757575;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.language-dropdown button i {
+    margin-right: 5px; /* Espaço para um possível ícone */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 1px solid #757575;
+    border-top: none;
+}
+
+.dropdown-content a {
+    color: #757575;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #222;
+}
+
+.language-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.country-section {
+    color: #757575;
+}
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
+    .links-section {
+        flex-direction: column;
+    }
+
+    .column {
+        margin-bottom: 20px;
+    }
+
+    .column ul {
+        text-align: center;
+    }
 }
