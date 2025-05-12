@@ -12,7 +12,7 @@
 
 body {
     background-color: #1111;
-    background-image: url(./assets/bgnetflix.png);
+    background-image: url("../bgnetflix.png");
     position: relative;
     background-size: cover;
     /**/
@@ -20,6 +20,7 @@ body {
 }
 
 .nav_logo {
+    width: 220PX;
     object-fit: contain;
 }
 
@@ -41,7 +42,7 @@ body {
 }
 
 .banner {
-    background-image: url(./assets/bannerZootopia2.png);
+    background-image: url("../bannerZootopia.png");
     background-size: cover;
     background-position: center center;
     color: #fff;
@@ -136,7 +137,7 @@ display: none;
 }
 
 .nav__black{
-    background-color: #111;
+    background-color: #DCDDD8;
 }
 
 
