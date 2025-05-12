@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="tetris-canvas" width="340" height="450"></canvas>
+        <div class="sidebar">
+            <div>
+                <h3>Pontuação</h3>
+                <p id="score">0</p>
+            </div>
+            <div>
+                <h3>Nível</h3>
+                <p id="level">1</p>
+            </div>
+            <div>
+                <h3>Próxima Peça</h3>
+                <canvas id="next-piece-canvas" width="80" height="80"></canvas>
+            </div>
+            <div>
+                <h3>Controles</h3>
+                <p>Setas direcionais para mover e rotacionar.</p>
+                <p>Aperte a letra "p" para pausar.</p>
+                <p>Barra de espaço para queda rápida.</p>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
