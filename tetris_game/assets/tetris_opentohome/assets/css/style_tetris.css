@@ -1,0 +1,273 @@
+@charset "utf-8";
+
+/* criando estilo */
+
+/* body {
+	padding: 2rem;
+	font-family: -apple-system, BlinkMacSystemFont, "Arial", sans-serif;
+}
+
+h1 {
+	font-size: 16px;
+	margin-top: 0;
+}
+
+p {
+	color: rgb(107, 114, 128);
+	font-size: 15px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+
+.card {
+	max-width: 620px;
+	margin: 0 auto;
+	padding: 16px;
+	border: 1px solid lightgray;
+	border-radius: 16px;
+}
+
+.card p:last-child {
+	margin-bottom: 0;
+} */
+
+/* style_tetris.css */
+
+body {
+  background-color: #171717; /* bg-gray-900 */
+  color: #ffffff; /* text-white */
+  min-height: 100vh; /* min-h-screen */
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+  align-items: center; /* items-center */
+  justify-content: center; /* justify-center */
+  padding: 1rem; /* p-4 */
+
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Arial", sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+h1 {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: bold; /* font-bold */
+  margin-bottom: 0.5rem; /* mb-2 */
+  background-image: linear-gradient(
+    to right,
+    #a855f7,
+    #3b82f6
+  ); /* bg-gradient-to-r from-purple-500 to-blue-500 */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* text-transparent */
+
+  font-size: 16px;
+  margin-top: 0;
+}
+
+p {
+	color: rgb(107, 114, 128);
+	font-size: 15px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+
+.text-gray-400 {
+  color: #a1a1aa; /* text-gray-400 */
+}
+
+#game-container {
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+  align-items: center; /* items-center */
+  gap: 2rem; /* gap-8 */
+}
+
+@media (min-width: 768px) {
+  #game-container {
+    flex-direction: row; /* md:flex-row */
+  }
+}
+
+.order-2 {
+  order: 2;
+}
+
+@media (min-width: 768px) {
+  .order-2 {
+    order: 1; /* md:order-1 */
+  }
+}
+
+#game-board {
+  background-color: #27272a; /* bg-gray-800 */
+  border: 2px solid #3f3f46; /* border-2 border-gray-700 */
+  display: grid; /* grid */
+  grid-template-columns: repeat(10, minmax(0, 1fr)); /* grid-cols-10 */
+  grid-template-rows: repeat(20, minmax(0, 1fr)); /* grid-rows-20 */
+  gap: 0px; /* gap-0 */
+}
+
+.order-1 {
+  order: 1;
+}
+
+@media (min-width: 768px) {
+  .order-1 {
+    order: 2; /* md:order-2 */
+  }
+}
+
+.game-info-container {
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+  gap: 2rem; /* gap-8 */
+}
+
+.info-box {
+  background-color: #27272a; /* bg-gray-800 */
+  padding: 1rem; /* p-4 */
+  border-radius: 0.5rem; /* rounded-lg */
+  border: 1px solid #3f3f46; /* border border-gray-700 */
+}
+
+.info-box h2 {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 0.5rem; /* mb-2 */
+  text-align: center; /* text-center */
+}
+
+#next-piece {
+  width: 8rem; /* w-32 */
+  height: 8rem; /* h-32 */
+  background-color: #3f3f46; /* bg-gray-700 */
+  border-radius: 0.25rem; /* rounded */
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+  justify-content: center; /* justify-center */
+}
+
+#next-piece-grid {
+  display: grid; /* grid */
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* grid-cols-4 */
+  grid-template-rows: repeat(4, minmax(0, 1fr)); /* grid-rows-4 */
+  gap: 0.25rem; /* gap-1 */
+}
+
+#score,
+#level,
+#lines {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: bold; /* font-bold */
+  text-align: center; /* text-center */
+}
+
+#start-btn {
+  background-color: #2563eb; /* bg-blue-600 */
+  color: #ffffff; /* text-white */
+  font-weight: bold; /* font-bold */
+  padding-top: 0.5rem; /* py-2 */
+  padding-bottom: 0.5rem; /* py-2 */
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem; /* px-4 */
+  border-radius: 0.25rem; /* rounded */
+  transition: background-color 0.15s ease-in-out; /* transition */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+#start-btn:hover {
+  background-color: #1d4ed8; /* hover:bg-blue-700 */
+}
+
+#pause-btn {
+  background-color: #d97706; /* bg-yellow-600 */
+  color: #ffffff; /* text-white */
+  font-weight: bold; /* font-bold */
+  padding-top: 0.5rem; /* py-2 */
+  padding-bottom: 0.5rem; /* py-2 */
+  padding-left: 1rem; /* px-4 */
+  padding-right: 1rem; /* px-4 */
+  border-radius: 0.25rem; /* rounded */
+  transition: background-color 0.15s ease-in-out; /* transition */
+  display: none; /* hidden */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+#pause-btn:hover {
+  background-color: #b45309; /* hover:bg-yellow-700 */
+}
+
+#game-over-modal {
+  position: fixed; /* fixed */
+  inset: 0; /* inset-0 */
+  background-color: rgba(0, 0, 0, 0.7); /* bg-black bg-opacity-70 */
+  display: none; /* hidden */
+  align-items: center; /* items-center */
+  justify-content: center; /* justify-center */
+}
+
+#game-over-modal > div {
+  background-color: #27272a; /* bg-gray-800 */
+  padding: 2rem; /* p-8 */
+  border-radius: 0.5rem; /* rounded-lg */
+  border: 1px solid #3f3f46; /* border border-gray-700 */
+  max-width: 42rem; /* max-w-md (tailwind default is 768px / 2 = 384px, adjusted slightly) */
+  width: 100%; /* w-full */
+  text-align: center; /* text-center */
+}
+
+#game-over-modal h2 {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: bold; /* font-bold */
+  margin-bottom: 1rem; /* mb-4 */
+  color: #ef4444; /* text-red-500 */
+}
+
+#game-over-modal p {
+  font-size: 1.25rem; /* text-xl */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+#final-score {
+  font-weight: bold; /* font-bold */
+}
+
+#restart-btn {
+  background-color: #2563eb; /* bg-blue-600 */
+  color: #ffffff; /* text-white */
+  font-weight: bold; /* font-bold */
+  padding-top: 0.5rem; /* py-2 */
+  padding-bottom: 0.5rem; /* py-2 */
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem; /* px-6 */
+  border-radius: 0.25rem; /* rounded */
+  transition: background-color 0.15s ease-in-out; /* transition */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+#restart-btn:hover {
+  background-color: #1d4ed8; /* hover:bg-blue-700 */
+}
+
+.card {
+	max-width: 620px;
+	margin: 0 auto;
+	padding: 16px;
+	border: 1px solid lightgray;
+	border-radius: 16px;
+}
+
+.card p:last-child {
+	margin-bottom: 0;
+}
