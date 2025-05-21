@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+
+    <title>The Game - Tetris</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/tetris_style.css" />
+  </head>
+
+  <body>
+    <div id="home" class="full-screen float with-bg">
+      <div class="logo">
+        <span class="red">V</span>
+        <span class="pink">O</span>
+        <span class="yellow">C</span>
+        <span class="blue">A</span>
+        <span class="purple">C</span>
+        <span class="cyan">A</span>
+        <span class="orange">O</span>
+      </div>
+      <button id="startBtn" class="semi-transparent-button active">
+        START
+      </button>
+    </div>
+
+    <div id="game-over" class="full-screen float hidden">
+      <h1>Game Over</h1>
+      <h2>Score: <span class="score"></span></h2>
+      <button id="playAgainBtn" class="active">Play again</button>
+      <button id="quitBtn">Quit</button>
+    </div>
+
+    <div id="game" class="full-screen with-bg">
+      <div class="left side"></div>
+      <canvas id="tetris" width="400" height="760"></canvas>
+      <div class="right side">
+        <div class="square"><img src="" id="next-piece" /></div>
+        <p>Score: <span class="score"></span></p>
+        <p>Speed: <span id="speed"></span></p>
+      </div>
+    </div>
+
+    <div id="pause-screen" class="hidden">
+      PAUSADO
+    </div>
+
+    <script src="./assets/js/tetris_app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create_tetris</title>
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-4">
+    <div class="text-center mb-6">
+        <h1 class="text-4xl font-bold mb-2 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">TETRIS</h1>
+        <p class="text-gray-400">Use arrow keys to move, Space to drop, and Up to rotate</p>
+        <p class="text-gray-400">Use keys to P, Pause </p>
+    </div>
+
+    <div id="game-container" class="flex flex-col md:flex-row items-center gap-8">
+        <div class="order-2 md:order-1">
+            <div id="game-board" class="bg-gray-800 border-2 border-gray-700 grid grid-cols-10 grid-rows-20 gap-0"></div>
+        </div>
+
+        <div class="order-1 md:order-2 flex flex-col gap-8">
+            <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                <h2 class="text-xl font-semibold mb-2 text-center">Next</h2>
+                <div id="next-piece" class="w-32 h-32 bg-gray-700 rounded flex items-center justify-center">
+                    <div class="grid grid-cols-4 grid-rows-4 gap-1" id="next-piece-grid"></div>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                <h2 class="text-xl font-semibold mb-2 text-center">Score</h2>
+                <div class="text-3xl font-bold text-center" id="score">0</div>
+            </div>
+
+            <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                <h2 class="text-xl font-semibold mb-2 text-center">Level</h2>
+                <div class="text-3xl font-bold text-center" id="level">1</div>
+            </div>
+
+            <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                <h2 class="text-xl font-semibold mb-2 text-center">Lines</h2>
+                <div class="text-3xl font-bold text-center" id="lines">0</div>
+            </div>
+
+            <button id="start-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition">
+                Start Game
+            </button>
+            <button id="pause-btn" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded transition hidden">
+                Pause
+            </button>
+        </div>
+    </div>
+
+    <div id="game-over-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
+        <div class="bg-gray-800 p-8 rounded-lg border border-gray-700 max-w-md w-full text-center">
+            <h2 class="text-3xl font-bold mb-4 text-red-500">Game Over!</h2>
+            <p class="text-xl mb-6">Your final score: <span id="final-score" class="font-bold">0</span></p>
+            <button id="restart-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition">
+                Play Again
+            </button>
+        </div>
+    </div>
+
+    <script src="./assets/js/app_tetris.js"></script>
+</body>
+
+</html>
