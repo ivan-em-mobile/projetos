@@ -1,0 +1,187 @@
+@charset "utf-8";
+
+  /* Se estiver usando uma fonte personalizada como 'Dekris',
+  certifique-se de que o arquivo da fonte (.otf, .ttf, etc.)
+  está no caminho correto e a declaração @font-face está ativa e correta.
+  Exemplo: */
+  @font-face {
+      font-family: 'Dekris';
+      src: url('../ConnectionBold-ER1g.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: #333333;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Correção: Seleciona elementos com a classe 'score' e o ID 'speed' */
+p .score,
+#speed {
+  display: inline-block;
+}
+
+div {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: monospace;
+  text-align: center;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+#game {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.with-bg {
+  background-image: url("../bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+}
+
+.side {
+  width: 400px;
+}
+
+#tetris {
+  border: 4px outset #919191;
+  max-width: 400px !important;
+  max-height: 760px !important;
+}
+
+.float {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.full-screen {
+  width: 1280px;
+  height: 800px;
+  max-width: 1280px;
+  max-height: 800px;
+}
+
+#game-over {
+  background-color: rgb(0 0 0 / 70%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#home {
+  display: flex;
+  background-color: black;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Estilos movidos do HTML para o CSS */
+/* Certifique-se que esta parte está no seu tetris_style.css */
+#pause-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 2em;
+  text-align: center;
+}
+
+/* E esta classe precisa estar definida para esconder o elemento */
+.hidden {
+  display: none !important;
+}
+.logo {
+  font-family: "Dekris", serif; /* Certifique-se que a fonte 'Dekris' está carregada */
+  font-size: 160px;
+  text-shadow: 3px 4px 4px #a3a3a3;
+}
+
+#quitBtn {
+  margin-top: 10px;
+}
+
+button {
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 8px;
+  background: #fff; /* fallback color for old browsers */
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.2s ease-out;
+  font-size: 55px;
+  padding: 15px 0px;
+  width: 400px;
+}
+
+button.active {
+  background: #fff !important;
+}
+
+button:hover {
+  background: #fff;
+  cursor: pointer;
+}
+
+#startBtn {
+  margin-top: 150px;
+}
+
+.red {
+  color: red;
+}
+
+.pink {
+  color: pink;
+}
+
+.blue {
+  color: blue;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.purple {
+  color: purple;
+}
+
+.cyan {
+  color: cyan;
+}
+
+.orange {
+  color: orange;
+}

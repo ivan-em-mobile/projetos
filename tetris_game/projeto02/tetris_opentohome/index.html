@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create_tetris</title>
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/style_tetris.css" />
+  </head>
+  <body>
+    <div>
+      <!-- Titulo do Site, Explicação do jogo -->
+      <h1>TETRIS - The Game with Vocação</h1>
+      <p>Use arrow keys to move, Space to drop, and Up to rotate</p>
+      <p>Use P to go Pause</p>
+    </div>
+
+    <div id="game-container">
+      <div>
+        <div id="game-board">
+      <canvas id="tetris" width="360" height="580" aria-label="Campo do jogo Tetris"></canvas>
+        </div>
+      </div>
+
+      <!-- Aqui fica a proxima peça -->
+      <div class="game-info-container">
+        <div class="info-box">
+          <h2>Next</h2>
+          <div id="next-piece">
+            <div id="next-piece-grid"></div>
+          </div>
+        </div>
+
+        <!-- Aqui fica o ponto do jogo -->
+        <div class="info-box">
+          <h2>Score</h2>
+          <div id="score">0</div>
+        </div>
+
+        <!-- Aqui fica o nivel de dificuldade -->
+        <div class="info-box">
+          <h2>Level</h2>
+          <div id="level">1</div>
+        </div>
+
+        <!-- Quantas linhas foram removidas -->
+        <div class="info-box">
+          <h2>Lines</h2>
+          <div id="lines">0</div>
+        </div>
+
+        <button id="start-btn">Start Game</button>
+        <button id="pause-btn">Pause</button>
+      </div>
+    </div>
+
+    <div id="game-over-modal">
+      <div>
+        <h2>Game Over!</h2>
+        <p>Your final score: <span id="final-score">0</span></p>
+        <button id="restart-btn">Play Again</button>
+      </div>
+    </div>
+  </body>
+  <script src="./assets/js/app_tetris.js"></script>
+</html>
