@@ -1,15 +1,15 @@
 /* Importing Google font - Open Sans */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
 
-:root{
-    --bk-color:#4A4145;
-    --bk-color-cr:#E5E1E2;
-    --txt-color-ge:#DA3466;
-    --txt-color-ge-ky-btn:#DCDDD8;
-    --bk-color-ge-ky-btn:#004A6D;
-    --txt-color-ge-ky-btn-hr:#4CC6F4;
-    --txt-color:#000;
-    --txt-color-we:#fff;
+:root {
+    --bk-color: #4A4145;
+    --bk-color-cr: #E5E1E2;
+    --txt-color-ge: #DA3466;
+    --txt-color-ge-ky-btn: #DCDDD8;
+    --bk-color-ge-ky-btn: #004A6D;
+    --txt-color-ge-ky-btn-hr: #4CC6F4;
+    --txt-color: #000;
+    --txt-color-we: #fff;
 }
 
 * {
