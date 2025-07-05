@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+/* Reset básico e configurações iniciais */
+* {
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column; /* Conteúdo em coluna para mobile */
+    justify-content: flex-start; /* Alinha ao topo em telas pequenas */
+    align-items: center;
+    min-height: 100vh; /* Ocupa no mínimo 100% da altura da viewport */
+    background-color: #f0f8ff; /* Cor de fundo suave */
+    overflow-y: auto; /* Permite rolagem vertical se o conteúdo for grande */
+    overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+.game-container {
+    background-color: #e0f2f7; /* Um tom de azul mais claro */
+    padding: 15px; /* Reduzido para melhor ajuste em telas pequenas */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 98%; /* Ocupa quase toda a largura da tela */
+    max-width: 700px; /* Limite máximo para o contêiner em telas grandes */
+    margin-top: 20px; /* Margem superior para separar do topo */
+    margin-bottom: 20px; /* Margem inferior para separar do final da tela */
+}
+
+h1 {
+    color: #004d40; /* Verde escuro */
+    margin-bottom: 15px;
+    /* Tamanho de fonte responsivo: mínimo 1.5em, ideal 7vw, máximo 2.5em */
+    font-size: clamp(1.5em, 7vw, 2.5em); 
+}
+
+.score-board {
+    /* Tamanho de fonte responsivo: mínimo 1em, ideal 4vw, máximo 1.5em */
+    font-size: clamp(1em, 4vw, 1.5em); 
+    color: #00796b; /* Outro tom de verde */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.memory-game {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    /* Espaçamento responsivo: mínimo 5px, ideal 2vw, máximo 10px */
+    gap: clamp(5px, 2vw, 10px); 
+    width: 100%; /* Ocupa 100% do .game-container */
+    aspect-ratio: 1 / 1; /* Essencial: Mantém a proporção 1:1 (largura : altura) */
+    perspective: 1000px; /* Propriedade para efeito 3D de virar */
+    margin: 0 auto; /* Centraliza a grade */
+}
+
+.memory-card {
+    width: 100%; /* Ocupa a largura total da célula do grid */
+    height: 100%; /* Ocupa a altura total da célula do grid */
+    position: relative;
+    transform-style: preserve-3d; /* ESSENCIAL: Permite que o conteúdo 3D não seja achatado */
+    transition: transform 0.5s; /* ESSENCIAL: Animação suave para virar a carta */
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* CORREÇÃO DO EFEITO DE VIRAR FORA DO LUGAR: Garante que o centro da transformação seja o centro do elemento */
+    transform-origin: center center; 
+}
+
+/* APENAS A CLASSE 'flip' GIRA A CARTA */
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+/* Regra para cartas combinadas: desabilita cliques e remove o cursor de ponteiro */
+.memory-card.match {
+    cursor: default; /* Mostra que não é mais clicável */
+    pointer-events: none; /* Garante que não é clicável de forma alguma */
+    /* Opcional: Adicione um estilo visual para cartas combinadas, se desejar */
+    /* Por exemplo: opacity: 0.7; */
+    /* ou filter: grayscale(100%); */
+}
+
+.front-face, .back-face {
+    width: 100%;
+    height: 100%;
+    position: absolute; /* ESSENCIAL: Posiciona uma face sobre a outra */
+    top: 0; /* Garante posicionamento correto */
+    left: 0; /* Garante posicionamento correto */
+    border-radius: 8px;
+    backface-visibility: hidden; /* ESSENCIAL: Esconde a face de trás quando ela está virada para você */
+    object-fit: contain; /* Garante que a imagem se ajuste completamente sem ser cortada */
+    background-color: #ffffff; /* Opcional: cor de fundo para o espaço vazio se 'contain' deixar barras */
+}
+
+.front-face {
+    transform: rotateY(180deg); /* ESSENCIAL: A face da frente começa virada para trás */
+}
+
+.back-face {
+    background-color: #00796b; /* Cor do verso da carta (se não usar imagem) */
+    /* Se você quiser usar uma imagem para o verso da carta, descomente e ajuste: */
+    /* background-image: url('../img/card_back.png'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+}
+
+/* Estilo para o botão de reiniciar */
+#restart-button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    font-size: clamp(1em, 3vw, 1.2em); /* Fonte responsiva */
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#restart-button:hover {
+    background-color: #e64a19;
+    transform: translateY(-2px);
+}
+
+/* Media Query para telas maiores (desktop) - Mobile-first */
+@media (min-width: 768px) {
+    body {
+        justify-content: center; /* Centraliza o conteúdo verticalmente em telas maiores */
+    }
+
+    .game-container {
+        padding: 30px; /* Aumenta o padding em telas maiores */
+        margin-top: auto; /* Centraliza verticalmente com margens auto */
+        margin-bottom: auto; /* Centraliza verticalmente com margens auto */
+    }
+}
